@@ -12,11 +12,12 @@ axis_Y = randn(1, 100) *sigma + green;
 axis_Z = randn(1, 100) *sigma + blue; 
 
 
-if (drift==1):
+if (drift==1)
 	blueinc=[1:100];
 	greeninc=[1:100];
 	axis_Y=axis_Y+greeninc;
 	axis_Z=axis_Z+blueinc;
+end
 
 redval=axis_X./255;
 blueval=axis_Y./255;
