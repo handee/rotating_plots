@@ -49,14 +49,16 @@ if __name__ == '__main__':
 
         flag, im = cap.read()
            
-# show the background model 
+# highlight the pixel of interest 
         cv2.circle(im,(xloc,yloc),8,(255,0,255),3)
         cv2.imshow('videow',im)
         n+=1
+#write the rgb values to a file
         currentfile="rgb{}.txt".format(no)
 	with open(currentfile, 'a+') as f:
             strout="{} {} {}".format(im[yloc][xloc][2],im[yloc][xloc][1],im[yloc][xloc][0])
             print >>f, strout
+#stick the image on /tmp so you can see it later
         fn="/tmp/location{}frame{:03d}.png".format(no,n)
         cv2.imwrite(fn,im)
 #open cv window management/redraw stuff 
